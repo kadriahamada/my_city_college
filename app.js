@@ -50,7 +50,7 @@ app.get("/", async (req, res) => {
 
 app.get("/users/:id", async (req, res) => {
   const user = await db.findOne("users", { id: req.params.id });
-  res.json(user);
+  res.status(200).json(user);
 });
 
 app.use((err, req, res, next) => {
